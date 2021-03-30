@@ -1,0 +1,19 @@
+.container-fluid {
+  height: calc(100vh - 56px);
+
+  > .row {
+    height: 100%;
+  }
+}
+
+.bg-gray{
+  background-color: #4a535c;
+}
+
+ul li a{
+  color: #00b0f4;
+}
+
+ul li a:hover{
+  text-decoration: underline;
+}

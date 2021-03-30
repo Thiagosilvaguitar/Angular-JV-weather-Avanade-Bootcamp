@@ -1,0 +1,40 @@
+<input [(ngModel)]="search" 
+       typeaheadOptionField="name"
+       [typeahead]="dataSource$"
+       [typeaheadAsync]="true"
+       [typeaheadWaitMs]="400"
+       [typeaheadItemTemplate]="itemTemplate"
+       (typeaheadOnSelect)="onSelected($event)"
+       (typeaheadLoading)="loading = $event"
+       [disabled]="disabled"
+       class="form-control"
+       placeholder="Pesquisar">
+
+<div *ngIf="loading">Carregando</div>
+
+<ng-template let-item="item" #itemTemplate>
+  <span>{{ item.name }}, {{ item.country }}</span>
+</ng-template>
+
+<!--  
+  linhas do input:
+  -2 way data biding com a variável search
+  -atributo do JSON que será usado para exibir na tela
+  -dados que estão sendo usados para pesquisa.
+  -setar como assincrono
+  -esperar 400ms após o usuário parar de digitar para efetivar a pesquisa de fato
+  -nome do template usado para exibir os resultados
+  -disparar evento de seleção
+  -no carregamento, loading recebe true ou false caso contrário
+  -desabilitar (true/false)
+  -classe css do componente
+  -placeholder "Pesquisar"
+
+  div:
+  -se estiver carregando, exibir a div, caso contrário, não exibe.
+
+  ng-template:
+  -será exibido dinamicamente conforme os retorno do que foi pesquisado, exibindo os resultados que deram "match" com o que o usuário escreveu
+
+
+-->

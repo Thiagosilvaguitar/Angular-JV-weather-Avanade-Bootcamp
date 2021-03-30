@@ -1,0 +1,36 @@
+.card {
+  margin-top: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+
+  > span {
+    width: fit-content;
+  }
+
+  > div {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 8px;
+    align-items: center;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      > img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.card-costumized{
+  background-color: #8c96a0;
+  border-radius: 5px;
+  border: solid;
+}
